@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Blue.PAIR</title>
+    <title>BlueX Bot Pair</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="ball"></div>
+    <div id="particles-js"></div>
     <div class="container">
-        <h1>✞ 𝕭𝖑𝖚𝖊ﾒﾒ✞🥷 BOT PAIR</h1>
-        <input type="text" placeholder="INPUT NUMBER ex:23491XXXXXXXXX">
-        <button id="getCodeBtn">GETCODE</button>
+        <h1>✞ BlueX🥷 BOT PAIR</h1>
+        <input id="phoneNumber" type="text" placeholder="INPUT NUMBER ex: 23491XXXXXXXXX">
+        <button id="getCodeBtn">GET CODE</button>
+        <div class="console" id="console"><p>System Ready...</p></div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
