@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BlueX Bot Pair</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <!-- Particle Background -->
     <div id="particles-js"></div>
+
+    <!-- Main Container -->
     <div class="container">
         <h1>✞ BlueX🥷 BOT PAIR</h1>
-        <input id="phoneNumber" type="text" placeholder="INPUT NUMBER ex: 23491XXXXXXXXX">
+        <input id="phoneNumber" type="text" placeholder="INPUT NUMBER ex: 23491XXXXXXXXX" />
         <button id="getCodeBtn">GET CODE</button>
-        <div class="console" id="console"><p>System Ready...</p></div>
+
+        <!-- Console Display -->
+        <div class="console" id="console">
+            <p>System Ready...</p>
+        </div>
     </div>
+
+    <!-- External Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
     <script src="script.js"></script>
