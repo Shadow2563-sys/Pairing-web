@@ -1,0 +1,89 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #007bff, #0052cc);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Bouncing Blue Ball */
+.ball {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #00c3ff;
+    border-radius: 50%;
+    animation: bounce 3s ease-in-out infinite alternate,
+               float 8s linear infinite;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+@keyframes bounce {
+    0% { top: 10%; }
+    100% { top: 80%; }
+}
+
+@keyframes float {
+    0% { left: 0%; }
+    100% { left: 100%; }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1;
+    position: relative;
+}
+
+.container h1 {
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    font-size: 16px;
+    background: white;
+    color: #333;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+button#getCodeBtn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #3399ff, #0066ff);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button#getCodeBtn:hover {
+    background: linear-gradient(135deg, #005ce6, #0047b3);
+}
