@@ -1,63 +1,56 @@
-/* styles.css */
-
-body {
+/* ===== RESET & BASE ===== */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #007bff, #0052cc);
+    background: #0d0d0d;
+    color: #fff;
     height: 100vh;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     position: relative;
 }
 
-/* Bouncing Blue Ball */
-.ball {
+/* ===== PARTICLES BACKGROUND ===== */
+#particles-js {
     position: absolute;
-    width: 60px;
-    height: 60px;
-    background: #00c3ff;
-    border-radius: 50%;
-    animation: bounce 3s ease-in-out infinite alternate,
-               float 8s linear infinite;
-    opacity: 0.3;
+    width: 100%;
+    height: 100%;
     z-index: 0;
 }
 
-@keyframes bounce {
-    0% { top: 10%; }
-    100% { top: 80%; }
-}
-
-@keyframes float {
-    0% { left: 0%; }
-    100% { left: 100%; }
-}
-
+/* ===== MAIN CONTAINER ===== */
 .container {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
     padding: 30px;
-    width: 90%;
-    max-width: 400px;
     text-align: center;
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 200, 255, 0.3);
+    box-shadow: 0 0 25px rgba(0, 200, 255, 0.4);
     z-index: 1;
-    position: relative;
+    width: 90%;
+    max-width: 400px;
+    animation: fadeIn 1s ease-in-out;
 }
 
+/* ===== HEADER TITLE ===== */
 .container h1 {
-    color: #ffffff;
-    margin-bottom: 25px;
-    font-size: 24px;
+    color: #00c8ff;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00c8ff, 0 0 20px #007bff;
+    font-weight: bold;
     letter-spacing: 1px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+/* ===== INPUT BOX ===== */
 input[type="text"] {
     width: 100%;
     padding: 14px;
@@ -66,24 +59,83 @@ input[type="text"] {
     outline: none;
     margin-bottom: 20px;
     font-size: 16px;
-    background: white;
-    color: #333;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    box-shadow: inset 0 0 10px rgba(0, 200, 255, 0.3);
+    transition: 0.3s;
 }
 
+input[type="text"]:focus {
+    box-shadow: 0 0 15px #00c8ff;
+    border: 1px solid #00c8ff;
+}
+
+/* ===== BUTTON ===== */
 button#getCodeBtn {
     width: 100%;
     padding: 14px;
     border: none;
     border-radius: 10px;
-    background: linear-gradient(135deg, #3399ff, #0066ff);
+    background: linear-gradient(135deg, #00c8ff, #007bff);
     color: white;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s ease;
+    box-shadow: 0 0 15px #00c8ff;
+    transition: 0.3s ease;
 }
 
 button#getCodeBtn:hover {
-    background: linear-gradient(135deg, #005ce6, #0047b3);
+    background: linear-gradient(135deg, #007bff, #0052cc);
+    box-shadow: 0 0 25px #00c8ff, 0 0 50px #007bff;
+    transform: scale(1.05);
+}
+
+/* ===== CONSOLE BOX ===== */
+.console {
+    background: rgba(0, 0, 0, 0.85);
+    color: #00ffcc;
+    font-family: monospace;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 14px;
+    height: 150px;
+    overflow-y: auto;
+    box-shadow: inset 0 0 10px #00c8ff;
+    border: 1px solid rgba(0, 200, 255, 0.2);
+}
+
+/* Scrollbar Styling */
+.console::-webkit-scrollbar {
+    width: 6px;
+}
+.console::-webkit-scrollbar-thumb {
+    background: #00c8ff;
+    border-radius: 5px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    .container h1 {
+        font-size: 22px;
+    }
+    input[type="text"] {
+        font-size: 14px;
+        padding: 12px;
+    }
+    button#getCodeBtn {
+        font-size: 14px;
+        padding: 12px;
+    }
 }
