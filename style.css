@@ -1,4 +1,3 @@
-/* ===== RESET & BASE ===== */
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +16,6 @@ body {
     position: relative;
 }
 
-/* ===== PARTICLES BACKGROUND ===== */
 #particles-js {
     position: absolute;
     width: 100%;
@@ -25,7 +23,6 @@ body {
     z-index: 0;
 }
 
-/* ===== MAIN CONTAINER ===== */
 .container {
     background: rgba(0, 0, 0, 0.6);
     border-radius: 20px;
@@ -37,20 +34,15 @@ body {
     z-index: 1;
     width: 90%;
     max-width: 400px;
-    animation: fadeIn 1s ease-in-out;
 }
 
-/* ===== HEADER TITLE ===== */
 .container h1 {
     color: #00c8ff;
     font-size: 28px;
     margin-bottom: 20px;
-    text-shadow: 0 0 10px #00c8ff, 0 0 20px #007bff;
-    font-weight: bold;
-    letter-spacing: 1px;
+    text-shadow: 0 0 10px #00c8ff;
 }
 
-/* ===== INPUT BOX ===== */
 input[type="text"] {
     width: 100%;
     padding: 14px;
@@ -61,8 +53,6 @@ input[type="text"] {
     font-size: 16px;
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
-    box-shadow: inset 0 0 10px rgba(0, 200, 255, 0.3);
-    transition: 0.3s;
 }
 
 input[type="text"]:focus {
@@ -70,7 +60,6 @@ input[type="text"]:focus {
     border: 1px solid #00c8ff;
 }
 
-/* ===== BUTTON ===== */
 button#getCodeBtn {
     width: 100%;
     padding: 14px;
@@ -79,19 +68,9 @@ button#getCodeBtn {
     background: linear-gradient(135deg, #00c8ff, #007bff);
     color: white;
     font-size: 16px;
-    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 0 15px #00c8ff;
-    transition: 0.3s ease;
 }
 
-button#getCodeBtn:hover {
-    background: linear-gradient(135deg, #007bff, #0052cc);
-    box-shadow: 0 0 25px #00c8ff, 0 0 50px #007bff;
-    transform: scale(1.05);
-}
-
-/* ===== CONSOLE BOX ===== */
 .console {
     background: rgba(0, 0, 0, 0.85);
     color: #00ffcc;
@@ -103,39 +82,40 @@ button#getCodeBtn:hover {
     font-size: 14px;
     height: 150px;
     overflow-y: auto;
-    box-shadow: inset 0 0 10px #00c8ff;
-    border: 1px solid rgba(0, 200, 255, 0.2);
 }
 
-/* Scrollbar Styling */
-.console::-webkit-scrollbar {
-    width: 6px;
-}
-.console::-webkit-scrollbar-thumb {
-    background: #00c8ff;
-    border-radius: 5px;
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.connection-status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ff0000;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 480px) {
-    .container {
-        padding: 20px;
-    }
-    .container h1 {
-        font-size: 22px;
-    }
-    input[type="text"] {
-        font-size: 14px;
-        padding: 12px;
-    }
-    button#getCodeBtn {
-        font-size: 14px;
-        padding: 12px;
-    }
+.spinner {
+    border: 3px solid rgba(0, 200, 255, 0.3);
+    border-radius: 50%;
+    border-top: 3px solid #00c8ff;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+input.error {
+    animation: shake 0.5s;
+    border: 1px solid #ff0000 !important;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
 }
