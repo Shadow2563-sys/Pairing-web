@@ -1,5 +1,5 @@
 // Set backend URL to Render
-const BACKEND_URL = "https://backend-for-web.onrender.com/";
+const BACKEND_URL = "https://backend-for-web.onrender.com";
 
 // Select elements
 const consoleBox = document.getElementById('console');
